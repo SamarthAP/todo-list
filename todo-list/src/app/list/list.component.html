@@ -6,3 +6,9 @@
     {{ item.message }}
   </li>
 </ul>
+<div>
+  <label>Message: 
+    <input #message>
+  </label>
+  <button (click)="add(message.value); message.value=''">Add</button>
+</div>

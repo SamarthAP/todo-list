@@ -10,15 +10,15 @@ export class ItemService {
 
   constructor(private http: HttpClient) { }
 
-  private uri = 'api/list' // URL to web api
+  private uri = 'http://localhost:4000/api/'; // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  addListItem(item: ListItem): Observable<ListItem> {
-    //return this.http.post<ListItem>(this.uri, item, this.httpOptions)
-    return;
+  addListItem(item: ListItem) {
+    return this.http.post<ListItem>(this.uri, item, this.httpOptions)
+    //return;
   }
 
   getListItems() {
