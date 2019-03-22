@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const listitem = require('./routes/listitem.route');
 const app = express();
@@ -22,6 +23,7 @@ db.on('disconnected', function() {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false})); // check what urlencoded does
+app.use(cors());
 app.use('/todolist', listitem); 
 
 let port = 1234;

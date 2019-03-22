@@ -18,7 +18,7 @@ exports.item_create = function (req, res) {
     let item = new ListItem({message: req.body.message});
     item.save(function(err) {
         if (err) return next(err);
-        res.send('ListItem added successfully');
+        res.send(item);
     });
 }
 

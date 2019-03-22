@@ -14,23 +14,19 @@ export class ListComponent implements OnInit {
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
-    //TODO: make a getListItems() func that sets listItems
     this.getListItems();
   }
 
   add(message: String) {
     message = message.trim();
-    if (!message) { return; }
+    if (!message) return;
     this.itemService.addListItem({message} as ListItem).subscribe(message => {
       this.listItems.push(message);
-    });
-    
+    })
   }
 
   getListItems(): void {
-    this.itemService.getListItems().subscribe(items => {
-      console.log(items);
-    });
+    this.itemService.getListItems().subscribe(items => this.listItems = items);
   }
 
 }
