@@ -1,10 +1,17 @@
 const ListItem = require('../models/listitem.model');
 
 exports.item_get = function (req, res) {
-    ListItem.findById(req.params.id, function (err, listitem) {
-        if (err) return next(err)
-        res.send(listitem);
-    })
+    if (req.params.id == 'all') {
+        ListItem.find({}, function (err, listitems) {
+            if (err) return next(err);
+            res.send(listitems);
+        })
+    } else {
+        ListItem.findById(req.params.id, function (err, listitem) {
+            if (err) return next(err);
+            res.send(listitem);
+        })
+    }
 }
 
 exports.item_create = function (req, res) {
