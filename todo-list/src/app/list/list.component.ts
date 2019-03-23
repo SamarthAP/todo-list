@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
 
   add(message: String) {
     message = message.trim();
+
     if (!message) return;
     this.itemService.addListItem({message} as ListItem).subscribe(message => {
       this.listItems.push(message);
@@ -27,6 +28,14 @@ export class ListComponent implements OnInit {
 
   getListItems(): void {
     this.itemService.getListItems().subscribe(items => this.listItems = items);
+  }
+
+  delete(item: ListItem): void {
+    this.listItems = this.listItems.filter(i => i !== item);
+    this.itemService.deleteListItem(item).subscribe();
+    //console.log(item);
+    
+    
   }
 
 }

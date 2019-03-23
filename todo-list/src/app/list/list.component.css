@@ -1,0 +1,47 @@
+.inputbox {
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 4px;
+    width: 33em;
+
+}
+
+.listcontainer {
+    height: 20em;
+    width: 40em;
+    overflow: scroll;
+    margin: 0 auto;
+}
+
+button {
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background-color: gray;
+}
+
+.deletebutton {
+    float: right;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    font-size: 1.5em;
+    width: 20em;
+}
+
+li {
+    cursor: default;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    margin: 1em;
+    padding: 1em;
+}
+
+ul {
+    list-style-type: none;
+
+}

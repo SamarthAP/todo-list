@@ -26,13 +26,13 @@ exports.item_update = function (req, res) {
     ListItem.findByIdAndUpdate(req.params.id, {$set: req.body}, 
         function (err, listitem) {
             if (err) return next(err);
-            res.send('ListItem updated');
+            res.send(listitem);
         });
 }
 
 exports.item_delete = function (req, res) {
-    ListItem.findByIdAndDelete(req.params.id, function (err) {
+    ListItem.findByIdAndDelete(req.params.id, function (err, listitem) {
         if (err) return next(err);
-        res.send('ListItem deleted');
+        res.send(listitem);
     });
 }

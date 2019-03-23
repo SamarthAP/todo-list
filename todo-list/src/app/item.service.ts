@@ -24,4 +24,8 @@ export class ItemService {
   getListItems() {
     return this.http.get<ListItem[]>(this.url + '/all');
   }
+
+  deleteListItem(item) {
+    return this.http.delete(this.url + '/' + item._id + '/delete', this.httpOptions);
+  }
 }

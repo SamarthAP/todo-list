@@ -1,4 +1,8 @@
-div {
-    background: gray;
-    padding: 1em;
+.welcome {
+    padding: 0.5em;
+    border-bottom: 3px solid rgb(136, 136, 136);
+    background-color: #4baeff;
+    color: white;
+}
+.container {
 }

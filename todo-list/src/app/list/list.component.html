@@ -1,14 +1,14 @@
-<p>
-  This is the list:
-</p>
-<ul>
-  <li *ngFor="let item of listItems">
-    {{ item.message }}
-  </li>
-</ul>
-<div>
-  <label>Message: 
-    <input #message>
-  </label>
+<div class="inputbox">
+    <input #message placeholder="Add a todo">
   <button (click)="add(message.value); message.value=''">Add</button>
 </div>
+
+<div class="listcontainer">
+  <ul>
+  <li *ngFor="let item of listItems">
+    {{ item.message }} <button class="deletebutton" (click)="delete(item)">Delete</button>
+  </li>
+</ul>
+</div>
+
+
