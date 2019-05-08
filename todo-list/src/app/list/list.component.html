@@ -6,7 +6,10 @@
 <div class="listcontainer">
   <ul>
   <li *ngFor="let item of listItems">
-    {{ item.message }} <button class="deletebutton" (click)="delete(item)">Delete</button>
+    <input #changedItem placeholder="{{item.message}}">
+    <!--<button *ngIf={{item.value}}>Update</button>-->
+    <button (click)="update(item, changedItem)" class="updatebutton">Update</button>
+    <button class="deletebutton" (click)="delete(item)">Delete</button>
   </li>
 </ul>
 </div>

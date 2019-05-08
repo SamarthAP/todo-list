@@ -28,4 +28,8 @@ export class ItemService {
   deleteListItem(item) {
     return this.http.delete(this.url + '/' + item._id + '/delete', this.httpOptions);
   }
+
+  updateListItem(item) {
+    return this.http.put(this.url + '/' + item._id + '/update', item, this.httpOptions)
+  }
 }

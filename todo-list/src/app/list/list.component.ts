@@ -10,6 +10,7 @@ import { ItemService } from '../item.service';
 export class ListComponent implements OnInit {
 
   listItems: ListItem[];
+  currItem: ListItem;
 
   constructor(private itemService: ItemService) { }
 
@@ -31,11 +32,27 @@ export class ListComponent implements OnInit {
   }
 
   delete(item: ListItem): void {
-    this.listItems = this.listItems.filter(i => i !== item);
-    this.itemService.deleteListItem(item).subscribe();
     //console.log(item);
     
-    
+    this.listItems = this.listItems.filter(i => i !== item);
+    this.itemService.deleteListItem(item).subscribe();
+  }
+
+  update(item: ListItem, change): void {
+    //this.listItems.
+    //console.log(item)
+    //this.itemService.updateListItem(item).subscribe();
+    if (change.value.length) {
+      this.listItems.find((e) => e == item).message = change.value;
+      item.message = change.value
+      change.value = "";
+      this.itemService.updateListItem(item).subscribe();
+    }
+
+  }
+
+  test(item) {
+    alert(item.value)
   }
 
 }

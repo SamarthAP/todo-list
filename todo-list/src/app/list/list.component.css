@@ -8,27 +8,35 @@
 
 .listcontainer {
     height: 20em;
-    width: 40em;
+    width: 50em;
     overflow: scroll;
     margin: 0 auto;
+    border-bottom-style: solid;
+    border-color: #4baeff;
 }
 
 button {
     border-radius: 4px;
     cursor: pointer;
     border: none;
-    background-color: gray;
+    background-color: rgb(209, 209, 209);
 }
 
-.deletebutton {
+button:hover {
+    background-color: #a0a0a0;
+}
+
+.deletebutton, .updatebutton {
     float: right;
+    margin: 0 1em;
+    padding: 1em;
 }
 
 input {
     border: 0;
     outline: 0;
     background: transparent;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(185, 162, 133);
     font-size: 1.5em;
     width: 20em;
 }
@@ -39,6 +47,10 @@ li {
     background-color: antiquewhite;
     margin: 1em;
     padding: 1em;
+}
+
+li:hover {
+    background-color: #e4cfb1;
 }
 
 ul {
